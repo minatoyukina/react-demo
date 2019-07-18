@@ -7,6 +7,7 @@ import Father from "../components/Father";
 import UserList from "../components/UserList";
 import Login from "../components/Login";
 import Recursive from "../components/Recursive";
+import Props from "../components/Props";
 
 const RouterView = () => (
     <div>
@@ -17,6 +18,7 @@ const RouterView = () => (
         <Route path="/userlist" exact component={UserList}/>
         <Route path="/login" exact component={Login}/>
         <Route path="/recursive" exact component={Recursive}/>
+        <Route path="/props" exact component={Props}/>
     </div>
 );
 export default RouterView

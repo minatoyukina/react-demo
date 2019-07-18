@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Props from "./Props";
 
 export default class Home extends Component {
     constructor(props) {
@@ -15,6 +16,8 @@ export default class Home extends Component {
                 <a href={"/userlist"}><p>UserList</p></a>
                 <a href={"/login"}><p>Login</p></a>
                 <a href={"/recursive"}><p>Recursive</p></a>
+                <a href={"/props"}><p>Props</p></a>
+                <Props name='jerry'/>
             </div>
         )
     }

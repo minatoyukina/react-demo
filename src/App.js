@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import RouterView from "./router/RouterView";
+import RouterView from "./router";
 import {BrowserRouter} from "react-router-dom";
 
 function App() {
