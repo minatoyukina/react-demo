@@ -8,9 +8,13 @@ import UserList from "../components/UserList";
 import Login from "../components/Login";
 import Recursive from "../components/Recursive";
 import Props from "../components/Props";
+import {Provider} from "react-redux";
+import Connect from "../components/Connect";
+import store from "../redux/store";
+import TodoApp from "../components/TodoApp";
 
 const RouterView = () => (
-    <div>
+    <Provider store={store}>
         <Route path="/" exact component={Home}/>
         <Route path="/user" exact component={User}/>
         <Route path="/databind" exact component={DataBind}/>
@@ -19,6 +23,8 @@ const RouterView = () => (
         <Route path="/login" exact component={Login}/>
         <Route path="/recursive" exact component={Recursive}/>
         <Route path="/props" exact component={Props}/>
-    </div>
+        <Route path="/connect" exact component={Connect}/>
+        <Route path="/todo" exact component={TodoApp}/>
+    </Provider>
 );
 export default RouterView

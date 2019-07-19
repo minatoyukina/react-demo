@@ -1,15 +1,6 @@
 import {createStore} from 'redux'
+import rootReducer from './reducers'
 
-const userReducer = function (state, action) {
-    if (state === undefined) {
-        state = [];
-    }
-    if (action.type === 'ADD_USER') {
-        return state.concat([action.user])
-    }
-    return state;
-};
-
-const store = createStore(userReducer);
+const store = createStore(rootReducer);
 
 export default store

@@ -17,6 +17,8 @@ export default class Home extends Component {
                 <a href={"/login"}><p>Login</p></a>
                 <a href={"/recursive"}><p>Recursive</p></a>
                 <a href={"/props"}><p>Props</p></a>
+                <a href={"/connect"}><p>Connect</p></a>
+                <a href={"/todo"}><p>Todo</p></a>
                 <Props name='jerry'/>
             </div>
         )
