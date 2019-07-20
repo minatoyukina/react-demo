@@ -1,7 +1,7 @@
 import React from 'react'
-import {VISIBILITY_FILTERS} from "../redux/constants";
+import {VISIBILITY_FILTERS} from "../../redux/constants";
 import {connect} from "react-redux";
-import {setFilter} from "../redux/actions";
+import {setFilter} from "../../redux/actions";
 
 const Filters = ({activeFilter, setFilter}) => {
     return (
@@ -11,7 +11,7 @@ const Filters = ({activeFilter, setFilter}) => {
                 return (
                     <span key={`visibility-filter-${currentFilter}`}
                           onClick={() => setFilter(currentFilter)}>
-                        {currentFilter}
+                        {currentFilter}{' '}
                     </span>
                 )
             })}
@@ -20,7 +20,7 @@ const Filters = ({activeFilter, setFilter}) => {
 };
 
 const mapStateToProps = state => {
-    return {activeFilter: state.filter}
+    return {activeFilter: state.filterReducer}
 };
 
 export default connect(mapStateToProps, {setFilter})(Filters)

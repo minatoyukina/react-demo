@@ -1,6 +1,6 @@
 import Todo from './Todo'
 import React from 'react'
-import {getTodosByFilter} from "../redux/selectors";
+import {getTodosByFilter} from "../../redux/selectors";
 import {connect} from "react-redux";
 
 const TodoList = ({todos}) => (
@@ -12,8 +12,9 @@ const TodoList = ({todos}) => (
 );
 
 const mapStateToProps = state => {
-    const {filter} = state;
-    const todos = getTodosByFilter(state, filter);
+    //aka: const filterReducer=state.filterReducer
+    const {filterReducer} = state;
+    const todos = getTodosByFilter(state, filterReducer);
     return {todos}
 };
 

@@ -12,8 +12,13 @@ export default class UserList extends Component {
     }
 
     componentDidMount() {
-        store.subscribe(() => this.setState({user: store.getState()})
+        store.subscribe(() => this.setState({user: store.getState().userReducer})
         );
+    }
+
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(store.getState())
     }
 
     change = () => {

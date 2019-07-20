@@ -11,7 +11,7 @@ import Props from "../components/Props";
 import {Provider} from "react-redux";
 import Connect from "../components/Connect";
 import store from "../redux/store";
-import TodoApp from "../components/TodoApp";
+import TodoApp from "../components/todo/TodoApp";
 
 const RouterView = () => (
     <Provider store={store}>
