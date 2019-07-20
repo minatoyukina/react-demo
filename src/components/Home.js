@@ -10,10 +10,10 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <a href={"/user"}><p>User</p></a>
+                <a href={"/userapi"}><p>UserApi</p></a>
                 <a href={"/databind"}><p>DataBind</p></a>
                 <a href={"/father"}><p>Father</p></a>
-                <a href={"/userlist"}><p>UserList</p></a>
+                <a href={"/userredux"}><p>UserRedux</p></a>
                 <a href={"/login"}><p>Login</p></a>
                 <a href={"/recursive"}><p>Recursive</p></a>
                 <a href={"/props"}><p>Props</p></a>

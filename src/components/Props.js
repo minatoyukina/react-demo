@@ -8,13 +8,12 @@ export default class Props extends Component {
 
 
     componentDidMount() {
-        console.log(this.props)
     }
 
     render() {
         return (
-            <div {...this.props}>
-                hello&nbsp;{this.props.name}
+            <div>
+                <p> hello&nbsp;{this.props.name}</p>
             </div>
         )
     }

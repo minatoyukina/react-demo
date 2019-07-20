@@ -6,17 +6,20 @@ export default class Recursive extends Component {
         super(props);
         this.state = {
             list: [
-                {name: '1',
+                {
+                    name: '1',
                     children: [
                         {name: '1-1'},
-                        {name: '1-2', children: [
+                        {
+                            name: '1-2', children: [
                                 {name: '1-2-1'}
                             ]
                         },
                         {name: '1-3'}
                     ]
                 },
-                {name: '2',
+                {
+                    name: '2',
                     children: [
                         {name: '2-1'}
                     ]
@@ -25,17 +28,17 @@ export default class Recursive extends Component {
         }
     }
 
-    loading = (item) => {
+    loading = (item, index) => {
         if (item.children && item.children.length) {
             return (
-                <React.Fragment>
+                <React.Fragment key={index}>
                     <h3>{item.name}</h3>
                     {item.children.map(this.loading)}
                 </React.Fragment>
 
             )
-        }else {
-            return <h3>{item.name}</h3>
+        } else {
+            return <h3 key={index}>{item.name}</h3>
         }
     };
 

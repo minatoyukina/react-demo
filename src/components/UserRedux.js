@@ -3,7 +3,7 @@ import store from '../redux/store'
 
 let index = 0;
 
-export default class UserList extends Component {
+export default class UserRedux extends Component {
     constructor(props) {
         super(props);
         this.state = {

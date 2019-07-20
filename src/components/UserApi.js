@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import http from "../server";
 
-export default class User extends Component {
+export default class UserApi extends Component {
 
     constructor(props) {
         super(props);
