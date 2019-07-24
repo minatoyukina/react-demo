@@ -3,7 +3,7 @@ import {VISIBILITY_FILTERS} from "../../redux/constants";
 import {connect} from "react-redux";
 import {setFilter} from "../../redux/actions";
 
-const Filters = ({activeFilter, setFilter}) => {
+const Filters = ({setFilter}) => {
     return (
         <div>
             {Object.keys(VISIBILITY_FILTERS).map(filterKey => {

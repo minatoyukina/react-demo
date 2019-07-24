@@ -12,6 +12,7 @@ import {Provider} from "react-redux";
 import Connect from "../components/Connect";
 import store from "../redux/store";
 import TodoApp from "../components/todo/TodoApp";
+import Style from "../components/Style";
 
 const RouterView = () => (
     <Provider store={store}>
@@ -25,6 +26,7 @@ const RouterView = () => (
         <Route path="/props" exact component={Props}/>
         <Route path="/connect" exact component={Connect}/>
         <Route path="/todo" exact component={TodoApp}/>
+        <Route path="/style" exact component={Style}/>
     </Provider>
 );
 export default RouterView
