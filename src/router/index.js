@@ -7,7 +7,7 @@ import Father from "../components/Father";
 import UserRedux from "../components/UserRedux";
 import Login from "../components/Login";
 import Recursive from "../components/Recursive";
-import Props from "../components/Props";
+import PropsApp from "../components/props/PropsApp";
 import {Provider} from "react-redux";
 import Connect from "../components/Connect";
 import store from "../redux/store";
@@ -23,7 +23,7 @@ const RouterView = () => (
         <Route path="/userredux" exact component={UserRedux}/>
         <Route path="/login" exact component={Login}/>
         <Route path="/recursive" exact component={Recursive}/>
-        <Route path="/props" exact component={Props}/>
+        <Route path="/props" exact component={PropsApp}/>
         <Route path="/connect" exact component={Connect}/>
         <Route path="/todo" exact component={TodoApp}/>
         <Route path="/style" exact component={Style}/>

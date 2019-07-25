@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Props from "./Props";
 
 export default class Home extends Component {
     constructor(props) {
@@ -20,7 +19,6 @@ export default class Home extends Component {
                 <a href={"/connect"}><p>Connect</p></a>
                 <a href={"/todo"}><p>Todo</p></a>
                 <a href={"/style"} className="test"><p>Style</p></a>
-                <Props name='jerry'/>
             </div>
         )
     }
