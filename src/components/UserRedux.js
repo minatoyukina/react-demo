@@ -12,8 +12,7 @@ export default class UserRedux extends Component {
     }
 
     componentDidMount() {
-        store.subscribe(() => this.setState({user: store.getState().userReducer})
-        );
+        store.subscribe(() => this.setState({user: store.getState().userReducer}));
     }
 
 

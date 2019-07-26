@@ -10,8 +10,16 @@ export default class Child extends Component {
         }
     }
 
+    componentDidMount() {
+        this.props.onRef(this);
+    }
+
     change = () => {
         this.props.callback(this.state.msg, this.state.name, this.state.age)
+    };
+
+    test = () => {
+        alert('hi father')
     };
 
     render() {
