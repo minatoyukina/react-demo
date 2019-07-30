@@ -19,6 +19,8 @@ export default class Home extends Component {
                 <a href={"/connect"}><p>Connect</p></a>
                 <a href={"/todo"}><p>Todo</p></a>
                 <a href={"/style"} className="test"><p>Style</p></a>
+                <a href={"/ref"}><p>Ref</p></a>
+                <a href={"/antd/home"}><p>Antd</p></a>
             </div>
         )
     }

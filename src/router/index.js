@@ -13,6 +13,11 @@ import Connect from "../components/Connect";
 import store from "../redux/store";
 import TodoApp from "../components/todo/TodoApp";
 import Style from "../components/Style";
+import Ref from "../components/Ref";
+
+import MyView from "../components/antd/MyView";
+import CarouselTest from "../components/antd/Carousel";
+import Antd from "../components/antd/Antd";
 
 const RouterView = () => (
     <Provider store={store}>
@@ -27,6 +32,11 @@ const RouterView = () => (
         <Route path="/connect" exact component={Connect}/>
         <Route path="/todo" exact component={TodoApp}/>
         <Route path="/style" exact component={Style}/>
+        <Route path="/ref" exact component={Ref}/>
+        <MyView path='/antd' component={MyView}>
+            <Route path='/antd/home' component={Antd}/>
+            <Route path='/antd/carousel' component={CarouselTest}/>
+        </MyView>
     </Provider>
 );
 export default RouterView
