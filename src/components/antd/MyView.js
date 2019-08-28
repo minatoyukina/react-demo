@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyView=props=>(
+const MyView = props => (
     <div>
         {props.children}
     </div>

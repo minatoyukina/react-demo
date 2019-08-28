@@ -4,7 +4,7 @@ module.exports = function(app) {
     // 配置代理
     app.use(
         proxy('/api', {
-            target: 'http://localhost:8080',
+            target: 'http://localhost:8081',
             secure: false,
             changeOrigin: true,
             ws: true,

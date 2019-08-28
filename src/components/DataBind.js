@@ -14,10 +14,15 @@ export default class DataBind extends Component {
         })
     }
 
+    click = e => {
+        console.log(e.target)
+    };
+
     render() {
         return (
             <div>
-                <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)}/>
+                <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)}
+                       onClick={this.click}/>
                 <p>{this.state.value}</p>
             </div>
         )

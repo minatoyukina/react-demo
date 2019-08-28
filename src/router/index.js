@@ -1,4 +1,4 @@
-import {Route} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 import UserApi from "../components/UserApi";
 import DataBind from "../components/DataBind";
 import React from 'react'
@@ -18,25 +18,32 @@ import Ref from "../components/Ref";
 import MyView from "../components/antd/MyView";
 import CarouselTest from "../components/antd/Carousel";
 import Antd from "../components/antd/Antd";
+import NotFound from "../components/404";
+import WSApp from "../components/websocket";
 
 const RouterView = () => (
     <Provider store={store}>
-        <Route path="/" exact component={Home}/>
-        <Route path="/userapi" exact component={UserApi}/>
-        <Route path="/databind" exact component={DataBind}/>
-        <Route path="/father" exact component={Father}/>
-        <Route path="/userredux" exact component={UserRedux}/>
-        <Route path="/login" exact component={Login}/>
-        <Route path="/recursive" exact component={Recursive}/>
-        <Route path="/props" exact component={PropsApp}/>
-        <Route path="/connect" exact component={Connect}/>
-        <Route path="/todo" exact component={TodoApp}/>
-        <Route path="/style" exact component={Style}/>
-        <Route path="/ref" exact component={Ref}/>
-        <MyView path='/antd' component={MyView}>
-            <Route path='/antd/home' component={Antd}/>
-            <Route path='/antd/carousel' component={CarouselTest}/>
-        </MyView>
+        <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/userApi" exact component={UserApi}/>
+            <Route path="/databind" exact component={DataBind}/>
+            <Route path="/father" exact component={Father}/>
+            <Route path="/userRedux" exact component={UserRedux}/>
+            <Route path="/login" exact component={Login}/>
+            <Route path="/recursive" exact component={Recursive}/>
+            <Route path="/props" exact component={PropsApp}/>
+            <Route path="/connect" exact component={Connect}/>
+            <Route path="/todo" exact component={TodoApp}/>
+            <Route path="/style" exact component={Style}/>
+            <Route path="/chat" exact component={WSApp}/>
+            <Route path="/ref" exact component={Ref}/>
+            <MyView path='/antd' component={MyView}>
+                <Route path='/antd/home' component={Antd}/>
+                <Route path='/antd/carousel' component={CarouselTest}/>
+            </MyView>
+            <Route component={NotFound}/>
+            <Redirect to={'/'}/>
+        </Switch>
     </Provider>
 );
 export default RouterView
