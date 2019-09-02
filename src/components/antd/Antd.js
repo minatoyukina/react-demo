@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from "react-router-dom";
 
 export default class Antd extends Component {
     constructor(props) {
@@ -9,7 +10,8 @@ export default class Antd extends Component {
     render() {
         return (
             <div>
-                <a href={"/antd/carousel"}><p>Carousel</p></a>
+                <Link to={"/antd/carousel"}><p>Carousel</p></Link>
+                <Link to={"/antd/layout"}><p>Layout</p></Link>
             </div>
         )
     }

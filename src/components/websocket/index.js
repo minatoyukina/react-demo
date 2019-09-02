@@ -1,6 +1,7 @@
 import React from "react"
 import Stomp from 'stompjs'
 import SockJS from 'sockjs-client'
+import './style.css'
 
 const colors = [
     '#2196F3', '#32c787', '#00BCD4', '#ff5652',
@@ -22,10 +23,8 @@ export default class WSApp extends React.Component {
             const usernamePage = document.querySelector('#username-page');
             const chatPage = document.querySelector('#chat-page');
             usernamePage.classList.add('hidden');
-
             chatPage.classList.remove('hidden');
             let socket = new SockJS('/api/ws');
-
             this.stompClient = Stomp.over(socket);
             this.stompClient.connect({}, this.onConnected, this.onError);
         }
@@ -33,7 +32,6 @@ export default class WSApp extends React.Component {
 
     onConnected = () => {
         this.stompClient.subscribe('/topic/public', this.onMessageReceived);
-
         this.stompClient.send("/app/chat.addUser",
             {},
             JSON.stringify({sender: this.username, type: 'JOIN'})
@@ -53,7 +51,6 @@ export default class WSApp extends React.Component {
         const messageInput = document.querySelector('#message');
         const messageContent = messageInput.value.trim();
         if (messageContent && this.stompClient) {
-
             const chatMessage = {
                 sender: this.username,
                 content: messageInput.value,
@@ -66,9 +63,7 @@ export default class WSApp extends React.Component {
 
     onMessageReceived = (payload) => {
         const message = JSON.parse(payload.body);
-
         const messageElement = document.createElement('li');
-
         if (message.type === 'JOIN') {
             messageElement.classList.add('event-message');
             message.content = message.sender + ' joined!';
@@ -77,27 +72,21 @@ export default class WSApp extends React.Component {
             message.content = message.sender + ' left!';
         } else {
             messageElement.classList.add('chat-message');
-
             const avatarElement = document.createElement('i');
             const avatarText = document.createTextNode(message.sender[0]);
             avatarElement.appendChild(avatarText);
             avatarElement.style['background-color'] = this.getAvatarColor(message.sender);
-
             messageElement.appendChild(avatarElement);
-
             const usernameElement = document.createElement('span');
             const usernameText = document.createTextNode(message.sender);
             usernameElement.appendChild(usernameText);
             messageElement.appendChild(usernameElement);
         }
-
         const textElement = document.createElement('p');
         const messageText = document.createTextNode(message.content);
         const messageArea = document.querySelector('#messageArea');
         textElement.appendChild(messageText);
-
         messageElement.appendChild(textElement);
-
         messageArea.appendChild(messageElement);
         messageArea.scrollTop = messageArea.scrollHeight;
     };
@@ -108,14 +97,13 @@ export default class WSApp extends React.Component {
         for (let i = 0; i < messageSender.length; i++) {
             hash = 31 * hash + messageSender.charCodeAt(i);
         }
-
         let index = Math.abs(hash % colors.length);
         return colors[index];
     };
 
     render() {
         return (
-            <div>
+            <div id='chat'>
                 <div id="username-page">
                     <div className="username-page-container">
                         <h1 className="title">Type your username</h1>
@@ -130,7 +118,6 @@ export default class WSApp extends React.Component {
                         </form>
                     </div>
                 </div>
-
                 <div id="chat-page" className="hidden">
                     <div className="chat-container">
                         <div className="chat-header">
@@ -140,7 +127,6 @@ export default class WSApp extends React.Component {
                             Connecting...
                         </div>
                         <ul id="messageArea">
-
                         </ul>
                         <form id="messageForm" name="messageForm" onSubmit={this.sendMessage}>
                             <div className="form-group">

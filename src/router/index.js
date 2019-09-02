@@ -20,6 +20,7 @@ import CarouselTest from "../components/antd/Carousel";
 import Antd from "../components/antd/Antd";
 import NotFound from "../components/404";
 import WSApp from "../components/websocket";
+import LayoutTest from "../components/antd/layout/Layout";
 
 const RouterView = () => (
     <Provider store={store}>
@@ -38,8 +39,9 @@ const RouterView = () => (
             <Route path="/chat" exact component={WSApp}/>
             <Route path="/ref" exact component={Ref}/>
             <MyView path='/antd' component={MyView}>
-                <Route path='/antd/home' component={Antd}/>
-                <Route path='/antd/carousel' component={CarouselTest}/>
+                <Route path='/antd' exact component={Antd}/>
+                <Route path='/antd/carousel' exact component={CarouselTest}/>
+                <Route path='/antd/layout' exact component={LayoutTest}/>
             </MyView>
             <Route component={NotFound}/>
             <Redirect to={'/'}/>
